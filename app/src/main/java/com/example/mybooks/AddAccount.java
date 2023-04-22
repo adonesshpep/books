@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class AddAccount extends AppCompatActivity {
+    public static final String EXTRA_ID="apk.nethieee";
     public static final String EXTRA_ACCOUNT="apk.nethyy";
     public static final String EXTRA_USERNAME="apk.nethyyy";
     public static final String EXTRA_PASSWORD="apk.nethyyyyy";
@@ -20,6 +21,7 @@ public class AddAccount extends AppCompatActivity {
     private TextView eusername;
     private TextView epassword;
     private TextView eemail;
+    private TextView mainthing;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,8 +30,18 @@ public class AddAccount extends AppCompatActivity {
         eusername =findViewById(R.id.username);
         epassword=findViewById(R.id.editPassword);
         eemail=findViewById(R.id.editemail);
+        mainthing=findViewById(R.id.textView2);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
-        setTitle("add Account");
+        Intent intent=getIntent();
+        if(intent.hasExtra(EXTRA_ID)){
+            setTitle("edit account");
+            eaccounttype.setText(intent.getStringExtra(EXTRA_ACCOUNT));
+            eusername.setText(intent.getStringExtra(EXTRA_USERNAME));
+            eemail.setText(intent.getStringExtra(EXTRA_EMAIL));
+            epassword.setText(intent.getStringExtra(EXTRA_PASSWORD));
+            mainthing.setText(intent.getStringExtra(EXTRA_ACCOUNT)+" ACCOUNT");
+        }else{
+        setTitle("add Account");}
 
     }
     private void saveAccount(){
@@ -46,6 +58,10 @@ public class AddAccount extends AppCompatActivity {
             intent.putExtra(EXTRA_USERNAME,username);
             intent.putExtra(EXTRA_EMAIL,email);
             intent.putExtra(EXTRA_PASSWORD,password);
+            int id=getIntent().getIntExtra(EXTRA_ID,-1);
+            if(id!=-1){
+                intent.putExtra(EXTRA_ID,id);
+            }
             setResult(RESULT_OK,intent);
             finish();
 
