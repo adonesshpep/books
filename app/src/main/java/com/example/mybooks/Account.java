@@ -12,14 +12,14 @@ public class Account {
 
     private String username;
 
-    private String Email;
+    private String email;
 
     private String password;
 
-    public Account(String account_type,String username, String email, String password) {
-        this.account_type=account_type;
+    public Account( String account_type, String username, String email, String password) {
+        this.account_type = account_type;
         this.username = username;
-        Email = email;
+        this.email = email;
         this.password = password;
     }
 
@@ -36,7 +36,7 @@ public class Account {
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public String getPassword() {
