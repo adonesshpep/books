@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">My Books</string>
+    <string name="app_name">My Accounts</string>
     <string name="save">save</string>
+    <string name="change_ock">Change Lock</string>
 </resources>
