@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,9 +40,11 @@ public class AddAccount extends AppCompatActivity {
             eusername.setText(intent.getStringExtra(EXTRA_USERNAME));
             eemail.setText(intent.getStringExtra(EXTRA_EMAIL));
             epassword.setText(intent.getStringExtra(EXTRA_PASSWORD));
-            mainthing.setText(intent.getStringExtra(EXTRA_ACCOUNT)+" ACCOUNT");
+            String mainput=intent.getStringExtra(EXTRA_ACCOUNT).toUpperCase();
+            mainthing.setText(mainput);
         }else{
-        setTitle("add Account");}
+        setTitle("add Account");
+        }
 
     }
     private void saveAccount(){
