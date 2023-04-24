@@ -63,7 +63,7 @@ public class lock_screen extends AppCompatActivity {
                 }
 
             }else{if(lock==null){textView.setText("Chose your pin lock");}else{textView.setText("Insert your pin");
-                    textView.setTextColor(Color.BLACK);} }}
+                    textView.setTextColor(Color.WHITE);} }}
 
             @Override
             public void afterTextChanged(Editable editable) {

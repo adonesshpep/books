@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    android:backgroundTint="#FDFDFD"
+    android:background="#000000"
+    android:backgroundTint="#000000"
     tools:context=".lock_screen">
 
     <LinearLayout
@@ -15,11 +15,12 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="239dp"
-            android:layout_height="72dp"
+            android:layout_width="150dp"
+            android:layout_height="112dp"
             android:layout_gravity="center"
-            android:background="#FEFEFE"
-            app:srcCompat="@drawable/lock_logo" />
+            android:layout_marginLeft="100sp"
+            android:layout_marginRight="100sp"
+            app:srcCompat="@drawable/lock_logo_1" />
 
         <TextView
             android:id="@+id/textView3"
@@ -31,7 +32,7 @@
             android:gravity="center"
             android:labelFor="@id/pin_view"
             android:text="TextView"
-            android:textColor="#090606"
+            android:textColor="#FFFFFF"
             android:textSize="15sp" />
 
         <com.chaos.view.PinView
@@ -44,10 +45,10 @@
             android:layout_marginRight="100sp"
             android:elevation="10dp"
             android:inputType="number"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             app:itemRadius="12sp"
             app:itemSpacing="5sp"
-            app:lineColor="@color/black"
+            app:lineColor="@color/white"
             app:viewType="rectangle" />
 
     </LinearLayout>
