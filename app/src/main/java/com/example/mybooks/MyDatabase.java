@@ -5,6 +5,7 @@ import android.content.Context;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+//the database class here i used singleton type cuz i only need to initialize one database and need to make sure that there is only one otherwise there will be data leak
 @Database(entities = {Account.class},version = 1)
 public abstract class MyDatabase extends RoomDatabase {
     private static MyDatabase instance ;

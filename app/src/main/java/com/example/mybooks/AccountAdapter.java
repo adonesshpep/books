@@ -14,8 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
-
+// using the listadapter instead of the adapter for the animated move in the deletion
 public class AccountAdapter extends ListAdapter<Account,AccountAdapter.AccountHolder> {
+    //this will be init using the setonitemclicklisitener method
     OnItemClickListener listener;
 
     public AccountAdapter() {
@@ -71,11 +72,13 @@ public class AccountAdapter extends ListAdapter<Account,AccountAdapter.AccountHo
                     int position = getAdapterPosition();
                     if (listener != null && position != RecyclerView.NO_POSITION) {
                         setAccountImage();
+                        //calling the onclick method that has been implemented in the main class and then set into the listener instance using the method setonitemclicklistener
                         listener.onClick(getItem(position));
                     }
                 }
             });
         }
+        //when creating an account to set a image basing on the name of that account
         public  void setAccountImage ( ){
             int position =getAdapterPosition();
             if(position!=RecyclerView.NO_POSITION){
@@ -100,6 +103,7 @@ public class AccountAdapter extends ListAdapter<Account,AccountAdapter.AccountHo
     }
 
     public interface OnItemClickListener {
+        //implement in the main class
         void onClick(Account account);
     }
 

@@ -3,8 +3,10 @@ package com.example.mybooks;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+//here is the main data component inside the table in the room data base
 @Entity(tableName = "account_table")
 public class Account {
+    //the id is auto generated for each account and it is used also in dao to select a specific account to delete or update
     @PrimaryKey(autoGenerate = true)
     private int id;
 

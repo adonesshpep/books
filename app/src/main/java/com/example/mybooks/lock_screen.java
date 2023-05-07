@@ -15,6 +15,8 @@ import android.widget.TextView;
 import com.chaos.view.PinView;
 
 public class lock_screen extends AppCompatActivity {
+    // there is a problem here idk where but i dont think this should be done like this
+    //the pinview is a dependency from github
     private PinView pinView;
     public static final String SHAREDNAME ="hellonethy";
     public static final String LOCK_KEY ="qhellonethy";
@@ -51,6 +53,7 @@ public class lock_screen extends AppCompatActivity {
                     editor.putString(LOCK_KEY,charSequence.toString());
                     editor.apply();
                     startActivity(intent);
+                    //i dont like the finish thing there is properly a better way to get out of an activity
                     finish();
                 }else{
                     if(charSequence.toString().equals(lock)){

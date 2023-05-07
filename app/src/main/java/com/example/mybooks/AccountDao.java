@@ -8,6 +8,7 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 import java.util.List;
+//the database access object
 
 @Dao
 public interface AccountDao {

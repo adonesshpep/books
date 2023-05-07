@@ -6,8 +6,10 @@ import android.os.AsyncTask;
 import androidx.lifecycle.LiveData;
 
 import java.util.List;
+//crating this to collect the data either from the local data base or from the real one but later there is no real one
 
 public class AccountRepositry {
+    //using AsyncTask cuz you cannot do the database operation in the main thread to
     private AccountDao accountDao;
     private LiveData<List<Account>> accountes;
     public AccountRepositry(Application application) {
@@ -75,7 +77,7 @@ public class AccountRepositry {
         private deleteAllAsyncTask(AccountDao accountDao){
             this.accountDao=accountDao;
         }
-
+        // this one is never used
         @Override
         protected Void doInBackground(Void... voids) {
             accountDao.deleteAll();

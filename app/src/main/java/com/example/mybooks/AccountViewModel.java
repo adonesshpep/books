@@ -9,6 +9,7 @@ import androidx.lifecycle.LiveData;
 import java.util.List;
 
 public class AccountViewModel extends AndroidViewModel {
+    //this class is to avoid the avoid the direct contact between the activity and the data in the database so in case any thing happened to the activity and it is destroyed the data will be save here and not get lost and this will prevent the data leak
     AccountRepositry repositry;
     LiveData<List<Account>> accountes;
     public AccountViewModel(@NonNull Application application) {
